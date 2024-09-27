@@ -3,6 +3,7 @@ package org.example;
 public class SavingAccount {
     public static double AnnualInterestRate;
     private double SavingBalance;
+    //
 
     public SavingAccount(double savingBalance) {
         setSavingBalance(savingBalance);
