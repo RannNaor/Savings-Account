@@ -1,30 +1,28 @@
 package org.example;
 
 public class SavingAccount {
-    public static double AnnualInterestRate;
+    private static double AnnualInterestRate;
     private double SavingBalance;
-    //
 
-    public SavingAccount(double savingBalance) {
-        setSavingBalance(savingBalance);
+
+    public SavingAccount(double balance) {
+        this.SavingBalance = balance;
     }
 
-    public static double getAnnualInterestRate() {
-        return AnnualInterestRate;
+    public void CalculateMonthlyInterest() {
+        double monthlyInterest = (AnnualInterestRate / 12) * SavingBalance;
+        SavingBalance += monthlyInterest;
     }
 
-    public static void setAnnualInterestRate(double annualInterestRate) {
-        AnnualInterestRate = annualInterestRate;
+    public static void ModifyInterestRate(double newRate) {
+        AnnualInterestRate = newRate;
     }
 
-    public double getSavingBalance() {
+    public double getBalance() {
         return SavingBalance;
     }
 
-    public void setSavingBalance(double savingBalance) {
-        SavingBalance = savingBalance;
-    }
-    public double CalculateMounthlyInterest(){
-        return (getAnnualInterestRate() * getSavingBalance()) / 12;
+    public static void setAnnualInterestRate(double rate) {
+        AnnualInterestRate = rate;
     }
 }
